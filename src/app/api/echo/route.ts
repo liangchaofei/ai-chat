@@ -6,7 +6,7 @@ export async function POST(req: NextRequest) {
 
     // 初始化 ZhipuAI
     const ai = new ZhipuAI({
-      apiKey: "8e20048ac32cefdc5f9d2e0f38f0c149.hK5dHtwYYGcPDgLU", // 这里替换为你的 API KEY
+      apiKey: process.env.KEY, // 这里替换为你的 API KEY
     });
 
     // 调用大模型接口
