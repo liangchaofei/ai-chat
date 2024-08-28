@@ -32,7 +32,12 @@ export default function Home() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="输入内容"
-          style={{ padding: "8px", fontSize: "16px" }}
+          style={{
+            padding: "8px",
+            fontSize: "16px",
+            width: "300px",
+            height: "80px",
+          }}
         />
         <button
           type="submit"
@@ -41,10 +46,12 @@ export default function Home() {
           确定
         </button>
       </form>
-      {response && (
+      {response ? (
         <div style={{ marginTop: "20px", fontSize: "18px" }}>
           <strong>返回结果:</strong> {response}
         </div>
+      ) : (
+        "正在等待结果..."
       )}
     </div>
   );
