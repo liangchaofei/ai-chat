@@ -9,12 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.5.2",
+    "@ant-design/x": "^1.0.2",
+    "antd": "^5.22.4",
+    "markdown-it": "^14.1.0",
     "next": "14.2.7",
     "react": "^18",
     "react-dom": "^18",
     "zhipuai-sdk-nodejs-v4": "^0.1.12"
   },
   "devDependencies": {
+    "@types/markdown-it": "^14.1.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
