@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { ZhipuAI } from "zhipuai-sdk-nodejs-v4";
 export async function POST(req: NextRequest) {
   try {
-    const { input, items } = await req.json();
+    const { input } = await req.json();
 
     // 初始化 ZhipuAI
     const ai = new ZhipuAI({
@@ -11,23 +11,11 @@ export async function POST(req: NextRequest) {
 
     // 调用大模型接口
     const data: any = await ai.createCompletions({
-      model: "glm-4v-flash",
+      model: "glm-4-flash",
       messages: [
         {
           role: "user",
-          // @ts-ignore
-          content: [
-            {
-              type: "text",
-              text: input,
-            },
-            {
-              type: "image_url",
-              image_url: {
-                url: items[0]?.originFileObj || items[0]?.name,
-              },
-            },
-          ],
+          content: input,
         },
       ],
       stream: false,
